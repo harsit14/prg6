@@ -40,12 +40,12 @@ public class ViewActivity extends AppCompatActivity {
             Document doc = dBuilder.parse(is);
             Element element=doc.getDocumentElement();
             element.normalize();
-            NodeList nList = doc.getElementsByTagName("employee");
+            NodeList nList = doc.getElementsByTagName("City");
             for (int i=0; i<nList.getLength(); i++) {
                 Node node = nList.item(i);
                 if (node.getNodeType() == Node.ELEMENT_NODE) {
                     Element element2 = (Element) node;
-                    lblXmlData.setText("City Name : " + getValue("city_name",element2)+"\n");
+                    lblXmlData.setText("City Name : " + getValue("city_name", element2)+"\n");
                     lblXmlData.append("Latitude : " + getValue("Latitude", element2)+"\n");
                     lblXmlData.append("Longitude : " + getValue("Longitude", element2)+"\n");
                     lblXmlData.append("Temperature : " + getValue("Temperature", element2)+"\n");
@@ -68,7 +68,7 @@ public class ViewActivity extends AppCompatActivity {
             inputStream.read(data);
             String readData=new String(data);
             JSONObject jsonObject=new JSONObject(readData);
-            JSONObject jsonObject1=jsonObject.getJSONObject("city");
+            JSONObject jsonObject1=jsonObject.getJSONObject("City");
             lblJsonData.setText("City Name:"+jsonObject1.getString("city_name")+"\n");
 
             lblJsonData.append("Latitude:"+jsonObject1.getString("Latitude")+"\n");
