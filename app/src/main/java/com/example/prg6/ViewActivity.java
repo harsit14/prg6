@@ -68,7 +68,7 @@ public class ViewActivity extends AppCompatActivity {
             inputStream.read(data);
             String readData=new String(data);
             JSONObject jsonObject=new JSONObject(readData);
-            JSONObject jsonObject1=jsonObject.getJSONObject("employee");
+            JSONObject jsonObject1=jsonObject.getJSONObject("city");
             lblJsonData.setText("City Name:"+jsonObject1.getString("city_name")+"\n");
 
             lblJsonData.append("Latitude:"+jsonObject1.getString("Latitude")+"\n");
